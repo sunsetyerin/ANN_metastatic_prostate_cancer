@@ -64,3 +64,11 @@ The score also is a an indicator in how likely it is to spread outside of the pr
 - Error doesn’t converge to 0 most of the time 
 
 ![image](https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/5313b4fe-d5f2-4f41-aa75-9c69ff31109b)
+
+## 9. Trouble Shooting 
+
+Potential causes of poor prognosis
+1. More training data set
+2. Biological phenomenon is complicated
+3. Other factors affecting Gleason score
+4. Gleason score could be subjective

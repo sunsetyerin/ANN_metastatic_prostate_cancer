@@ -16,53 +16,23 @@ Metastatic Prostate Cancer Subtype Prognosis with Deep Learning
 Proceedings of the national academy of sciences, 116 (23), s. 11428–11436. doi:10.1073/pnas.1902651116
 [paper link](https://pubmed.ncbi.nlm.nih.gov/31061129/)
 
-## 3. Snakemake usage of this repo
+## 3. Data Description
 
-All scripts, steps and jobs are managed using
-[snakemake](https://snakemake.readthedocs.io/en/stable/#)
+- Androgen receptor signaling inhibitor (ARSI; abiraterone or enzalutamide)
+- RB1 alteration was with poor survival
+- RB1, AR, and TP53 alterations were associated with a shorter time on treatment with an ARSI
+- RB1, AR, and TP53
 
-Input files, workflow parameters and output path are provided through config
-files (`configs/*.yaml`).
+<img width="388" alt="image" src="https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/7a896d68-35a5-4093-9eb6-377ad0428bf2">
 
-The workflow is designed to compare direct-RNA samples.
+## 4. Gleason Score
 
-```bash
-# To display the jobs and commands including subworkflows
-snakemake -np
+Prostate Cancer is classified by the Gleason Score.\
+A Prostate Cancer Gleason Score or Grade helps to determine how aggressively the prostate cancer is likely to behave.\
+The score will help classify the cancer by grading how quickly it it is likely to grow.\
+The score also is a an indicator in how likely it is to spread outside of the prostate gland.
 
-# to visualize the acyclic rulegraph
-snakemake --rulegraph | dot | display -
-
-# To launch the jobs
-snakemake --use-conda
-```
-
-An example of snakemake profile for "numbers" cluster is available at
-`configs/smk_profiles/numbers/config.yaml` and a second one for "slurmgpu" will
-be available eventually.
-
-## 4. Perform the processing of a single sample
-
-So far the processing of a sample includes basecalling, polyA tail estimation,
-gene/isoform expression and match to Illumina gene expression (if available in
-Flair configs, see config file).
-
-Config files contains the values of variables needed to perform analyses.
-
-`configs/sample_config.yaml` is under development and is provided as an 
-example. It's meant to be used to apply the analyses on those first data
-available from the PromethION platform.
-
-Most of the data directories hosting results will be created *ad-hoc* by the
-snakemake manager, although it is possible to create the folders in advance.
-**Any of these folders can be replaced by a symlink in order to redirect
-voluminous files to appropriate spaces.** The entire `data/` folder can be
-written to a project space with a simple:
-
-`ln -s /PATH/TO/SCRATCH/data data`
-
-It is recommended to use symlinks to redirect the data/ folder to a scrath
-space since the outputs can get particularly large.
+<img width="1167" alt="image" src="https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/05d94535-b4a6-49c1-865f-b8ee5344610b">
 
 ## 5. Guppy Basecall
 

@@ -7,6 +7,8 @@ Metastatic Prostate Cancer Subtype Prognosis with Deep Learning
 - About 50% of men diagnosed with local prostate cancer will get metastatic cancer during their lifetime 
 - Finding cancer early and treating it can lower that rate
 
+![image](https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/9244ec4d-c0cd-4bf4-999f-17904bf00cd9)
+
 ## 2. Data Source
 
 - Genomic correlates of clinical outcome in advanced prostate cancer

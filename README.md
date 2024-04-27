@@ -44,34 +44,23 @@ The score also is a an indicator in how likely it is to spread outside of the pr
 
 <img width="732" alt="image" src="https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/b455b04b-6230-4705-aa5a-80e831ed9728">
 
+## 7. Deep Learning Model Structure
 
-## 7. Flair
+- \# Input node = 3 ;\
+   Alteration information of each gene, RB1, AR, and TP53  
+- \# Output node = 5;\
+   Gleason score 5,6,7,8,9 (Multiple Classification)\
+   One-hot encoding\
+   Output layer activation function = Softmax\
 
-`Flair` is a workflow in itself and requires its own environment to run. Both
-the scripts used for direct_rna analysis and environment `.yaml` files are
-provided in the `flair` submodule.
+- \# Hidden layer = 10
+- \# Hidden layer nodes = 50 
+- Hidden layer activation function = Leaky ReLU
 
-Unlike `TailfindR` the input is a single `.fast5` which prompts the need for
-catenation of the multiple 4000 reads `.fast5` produced by `Guppy`. 
+## 8. Result
 
-## 8. Albacore
+- Result of 10000 iteration 
+- Poor prognosis
+- Error doesn’t converge to 0 most of the time 
 
-`Albacore` is a deprecated basecaller that was discontinued by Oxford Nanopore
-Technologies to the benefit of the currently maintained `Guppy`. It is included
-to this workflow as a requirement for `EpiNano` m6A caller which relies on the
-basecall errors of `Albacore` to assign methylated sites.
-
-`EpiNano` states that it requires
-[Albacore v2.1.7](https://github.com/enovoa/EpiNano#considerations-when-using-this-software),
-to provide accurate prediction. This version is unavailable. The community only
-have access to `Albacore v2.3.4`.
-[link to Nanoporetech community](https://community.nanoporetech.com/downloads)
-
-*NOTE* `Albacore` is used along with the multiread `.fast5` wrapper available
-via the `seamlessf5` package.
-
-## 9. EpiNano
-
-The current version of `EpiNano` allows m6A sites calling at the genomic
-position level. The calling at read level is
-[under development](https://github.com/enovoa/EpiNano#considerations-when-using-this-software).
+![image](https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/5313b4fe-d5f2-4f41-aa75-9c69ff31109b)

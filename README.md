@@ -16,6 +16,8 @@ Metastatic Prostate Cancer Subtype Prognosis with Deep Learning
 Proceedings of the national academy of sciences, 116 (23), s. 11428–11436. doi:10.1073/pnas.1902651116
 [paper link](https://pubmed.ncbi.nlm.nih.gov/31061129/)
 
+![image](https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/09344472-28a6-440a-943e-f787d4a3ac79)
+
 ## 3. Data Description
 
 - Androgen receptor signaling inhibitor (ARSI; abiraterone or enzalutamide)

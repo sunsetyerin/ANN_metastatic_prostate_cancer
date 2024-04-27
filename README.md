@@ -34,36 +34,16 @@ The score also is a an indicator in how likely it is to spread outside of the pr
 
 <img width="1167" alt="image" src="https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/05d94535-b4a6-49c1-865f-b8ee5344610b">
 
-## 5. Guppy Basecall
+## 5. Data Structure
 
-Oxford Nanopore Technologies apparels uses `MinKNOW` software to basecall
-reads in realtime, at the expense of the production of the event table
-(formerly produced by `Albacore`). `Albacore` is discontinued and `Guppy`
-is currently favored. It can produce a move table during basecall that is
-similar to the deprecated event table (make sure to use `--fast5_out`).
-`TailfindR` requires one of those tables.
+<img width="881" alt="image" src="https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/56ba98f3-1460-404a-9316-5682021ce9fb">
 
-Download available [here](https://community.nanoporetech.com/downloads).
+## 6. Hypothesis
 
-Current configs are using an installation available to dlhost01 & dlhost03.
-`/opt/ont-guppy_3.2.2/bin/guppy_basecaller`
+**Prediction of Gleason score by gene RB1, AR, and TP53  alteration information**
 
-## 6. TailfindR
+<img width="732" alt="image" src="https://github.com/sunsetyerin/ANN_metastatic_prostate_cancer/assets/59498491/b455b04b-6230-4705-aa5a-80e831ed9728">
 
-`TailfindR` is designed to be supplied with a single directory containing all
-the `.fast5` files. It supports parallelization by specifying the number of
-cores to attribute to the `TailfindR` job. However, it was designed and tested
-with MinIONs output files and I noticed that it doesn't scale well to a full
-PromethION flowcell. The first large usage of `TailfindR` on gphost04 using the
-sequencing run of the COLO829 cell line with 1563 `.fast5` files of ~4000 reads
-(~6.25M reads) took 1.5 weeks to process all files and failed to produce the
-compilation of the results after another 2 weeks.
-
-The chosen workaround to address the issue is to generate temporary directories
-each containing a softlink towards a single (or few) `.fast5` file(s) (see
-`rule tailfindr_butler`). A `TailfindR` job is then generated for each
-temporary directories. Numerous `TailfindR` jobs should be submitted to a
-cluster such as `numbers` through `snakemake`.
 
 ## 7. Flair
 

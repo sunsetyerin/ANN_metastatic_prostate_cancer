@@ -53,7 +53,7 @@ The score also is a an indicator in how likely it is to spread outside of the pr
 - \# Output node = 5;\
    Gleason score 5,6,7,8,9 (Multiple Classification)\
    One-hot encoding\
-   Output layer activation function = Softmax\
+   Output layer activation function = Softmax
 
 - \# Hidden layer = 10
 - \# Hidden layer nodes = 50 
